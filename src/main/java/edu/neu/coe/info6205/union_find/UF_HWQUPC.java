@@ -186,6 +186,7 @@ public class UF_HWQUPC implements UF {
         int rootQ = j;
         if (rootP == rootQ) return;
         // make smaller root point to larger one
+        //store the depth rather than the size
         if (height[rootP] < height[rootQ]) {
             parent[rootP] = rootQ;
 
@@ -207,6 +208,7 @@ public class UF_HWQUPC implements UF {
 
     /**
      * This implements the single-pass path-halving mechanism of path compression
+     * The grandparent fix
      */
     private void doPathCompression(int i) {
         // TO BE IMPLEMENTED update parent to value of grandparent
